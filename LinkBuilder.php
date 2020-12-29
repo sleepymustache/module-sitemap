@@ -47,7 +47,7 @@ class LinkBuilder extends Module
         // Sitemap data is defined in settings.php as a global
         $this->sitemap = new \Module\Sitemap\Helper();
     }
-
+ 
     /**
      * Starts the timer when the framework loads.
      *
