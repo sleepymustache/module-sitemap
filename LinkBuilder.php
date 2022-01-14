@@ -33,10 +33,10 @@ class LinkBuilder extends Module
      * Define the hook points
      */
     public $hooks = [
-        'linkbuilder_preprocess'    => 'setup',
-        'render_placeholder_smlink' => 'createLink',
-        'render_placeholder_smlink.title' => 'getTitle',
-        'render_placeholder_smlink.link' => 'getLink',
+        'linkbuilder_preprocess'           => 'setup',
+        'render_placeholder_smlink'        => 'createLink',
+        'render_placeholder_smlink.title'  => 'getTitle',
+        'render_placeholder_smlink.link'   => 'getLink',
         'render_placeholder_smlink.target' => 'getTarget',
     ];
 
@@ -60,6 +60,7 @@ class LinkBuilder extends Module
     {
         $args = func_get_args();
         $page_id = $args[1];
+
         // Remove the first two arguments
         array_shift($args);
         array_shift($args);
@@ -81,6 +82,7 @@ class LinkBuilder extends Module
     {
         $args = func_get_args();
         $page_id = $args[1];
+
         return $this->sitemap->link($page_id);
     }
 
@@ -93,6 +95,7 @@ class LinkBuilder extends Module
     {
         $args = func_get_args();
         $page_id = $args[1];
+        
         return $this->sitemap->target($page_id);
     }
 
